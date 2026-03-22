@@ -1,28 +1,41 @@
 import ScratchCircle from "./ScratchReveal";
 import data from "../public/manifest.json";
+import scratchImg from "../src/assets/scratch.png";
 
 function WeddingDate() {
+  const date = new Date(data.date);
+
+  const months = [
+    "Jan","Feb","Mar","Apr","May","Jun",
+    "Jul","Aug","Sep","Oct","Nov","Dec"
+  ];
+
   return (
-    <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
-      
+    <div
+      style={{
+        display: "flex",
+        gap: "20px",
+        justifyContent: "center",
+        marginTop: "20px"
+      }}
+    >
       <ScratchCircle
         size={100}
-        coverImage="../src/assets/scratch.png"
-        label={new Date(data.date).getDate()}
+        coverImage={scratchImg}
+        label={date.getDate()}
       />
 
       <ScratchCircle
         size={100}
-        coverImage="../src/assets/scratch.png"
-        label={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][new Date(data.date).getMonth()]}
+        coverImage={scratchImg}
+        label={months[date.getMonth()]}
       />
 
       <ScratchCircle
         size={100}
-        coverImage="../src/assets/scratch.png"
-        label={new Date(data.date).getFullYear()}
+        coverImage={scratchImg}
+        label={date.getFullYear()}
       />
-
     </div>
   );
 }

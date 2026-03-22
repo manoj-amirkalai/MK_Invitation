@@ -6,18 +6,26 @@ const ScratchCircle = ({ size = 150, coverImage, label }) => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
+
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
     const img = new Image();
     img.src = coverImage;
 
     img.onload = () => {
+      ctx.clearRect(0, 0, size, size);
       ctx.drawImage(img, -2, -2, size + 4, size + 4);
     };
   }, [coverImage, size]);
 
   const scratch = (x, y) => {
-    const ctx = canvasRef.current.getContext("2d");
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
     ctx.globalCompositeOperation = "destination-out";
     ctx.beginPath();
@@ -31,18 +39,20 @@ const ScratchCircle = ({ size = 150, coverImage, label }) => {
     if (e.touches) {
       return {
         x: e.touches[0].clientX - rect.left,
-        y: e.touches[0].clientY - rect.top,
+        y: e.touches[0].clientY - rect.top
       };
     }
 
     return {
       x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
+      y: e.clientY - rect.top
     };
   };
 
   const handleMove = (e) => {
     if (!isDrawing) return;
+
+    e.preventDefault();
 
     const pos = getPosition(e);
     scratch(pos.x, pos.y);
@@ -64,7 +74,7 @@ const ScratchCircle = ({ size = 150, coverImage, label }) => {
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",
         background: "white",
-        border: "1px solid rgba(92, 94, 8, 0.3)",
+        border: "1px solid rgba(92,94,8,0.3)"
       }}
     >
       {label}
@@ -80,6 +90,7 @@ const ScratchCircle = ({ size = 150, coverImage, label }) => {
           height: "100%",
           cursor: "pointer",
           display: "block",
+          touchAction: "none"
         }}
         onMouseDown={() => setIsDrawing(true)}
         onMouseUp={() => setIsDrawing(false)}

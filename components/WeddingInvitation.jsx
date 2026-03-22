@@ -47,15 +47,15 @@ const AUDIO_SRC =
 const EVENTS = [
   {
     name: "Reception",
-    date: "Friday, March 17th 2026",
-    venue: "Rambagh, Jaipur",
-    time: "6pm Onwards",
+    date: "Saturday, Sep 12th 2026",
+    venue: "K.Pudhur, Perambalur",
+    time: "2pm Onwards",
   },
   {
     name: "Muhurtham",
-    date: "Friday, March 12th 2026",
-    venue: "Rambagh, Jaipur",
-    time: "6pm Onwards",
+    date: "Sunday, Sep 13th 2026",
+    venue: "Perambalur",
+    time: "8am Onwards",
   },
 ];
 
@@ -63,17 +63,12 @@ const THINGS = [
   {
     icon: IMG.hashtagIcon,
     title: "Hashtag",
-    desc: "While posting photos on social media please use the hashtag - #abkan",
+    desc: "While posting photos on social media please use the hashtag - #manojwedskeerthana",
   },
   {
     icon: IMG.weatherIcon,
     title: "Weather",
     desc: "It will be mostly sunny with temperature reaching up to 28 degrees at the venue",
-  },
-  {
-    icon: IMG.staffIcon,
-    title: "Staff",
-    desc: "We recommend the nearby hotel called Bhola Bhawan near the venue for the staff members",
   },
   {
     icon: IMG.parkingIcon,
@@ -981,7 +976,7 @@ export default function WeddingInvitation() {
             Click to message on WhatsApp
           </p>
           <a
-            href="https://wa.me/"
+            href="https://wa.me/qr/CWYH77IQQSYQK1"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -1103,7 +1098,7 @@ export default function WeddingInvitation() {
           Click to open our Instagram page
         </p>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/am__rare_one?igsh=MTB5aThnY2JqejFhOQ=="
           target="_blank"
           rel="noopener noreferrer"
           style={{
