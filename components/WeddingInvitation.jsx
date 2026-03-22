@@ -616,7 +616,9 @@ export default function WeddingInvitation() {
         alignItems: "center",
         gap: 8,
         padding: "20px 28px",  
-        background: "#646260ab",
+        backgroundImage: `url(${IMG.cane})`,
+        backgroundSize: "fit",
+        backgroundPosition: "center",
        }}>
           {/* Om */}
          
@@ -670,8 +672,8 @@ export default function WeddingInvitation() {
               fontSize: 15,
               lineHeight: "70%",
                 color: 'black' ,
-              marginTop: 40,
-              marginBottom: 28,
+              marginTop: 10,
+              marginBottom: 18,
             }}
           >
             INVITE
@@ -723,7 +725,7 @@ export default function WeddingInvitation() {
           {/* Daughter of / On the following events */}
           <div
             style={{
-              marginTop: 48,
+              marginTop: 18,
               display: "flex",
               flexDirection: "column",
               gap: 8,
