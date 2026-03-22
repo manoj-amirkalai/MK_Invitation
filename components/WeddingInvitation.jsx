@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import templeImg from "../src/assets/temple.jpg";
-import weddingimg from "../src/assets/wedding.webp";
-import receptionimg from "../src/assets/reception.jpg";
+import weddingimg from "../src/assets/wedding.png";
+import receptionimg from "../src/assets/reception.png";
 import WeddingDateReveal from "./WeddingDateReveal";
 import data from "../public/manifest.json";
 
@@ -625,6 +625,7 @@ export default function WeddingInvitation() {
         backgroundImage: `url(${IMG.mobileFooter})`,
         backgroundSize: "fit",
         backgroundPosition: "center -1050px",
+        backgroundRepeat: "no-repeat",
        }}>
           {/* Om */}
          
@@ -635,6 +636,9 @@ export default function WeddingInvitation() {
               letterSpacing: "-0.03em",
               lineHeight: "100%",
                 color: 'black' ,
+                fontWeight: 500,
+                textShadow: "0 0 3px rgb(236, 236, 236)",
+                background: "rgba(255, 255, 255, 0.82)",
             }}
           >
             With the heavenly blessings of
@@ -646,6 +650,7 @@ export default function WeddingInvitation() {
               lineHeight: "110%",
                 color: 'black' ,
               marginTop: 6,
+                background: "rgba(255, 255, 255, 0.82)",
             }}
           >
             Smt. AMIRTHALINGAM &amp; KALAIVANI
@@ -665,6 +670,7 @@ export default function WeddingInvitation() {
               fontSize: 15,
               letterSpacing: "-0.03em",
               lineHeight: "150%",
+                background: "rgba(255, 255, 255, 0.82)",
                 color: 'black' ,
             }}
           >
@@ -680,6 +686,7 @@ export default function WeddingInvitation() {
                 color: 'black' ,
               marginTop: 10,
               marginBottom: 18,
+                background: "rgba(255, 255, 255, 0.82)",
             }}
           >
             INVITE
@@ -690,6 +697,7 @@ export default function WeddingInvitation() {
             style={{
               fontSize: 15,
               letterSpacing: "-0.05em",
+                background: "rgba(255, 255, 255, 0.82)",
               lineHeight: "100%",
                 color: 'black' ,
             }}
@@ -701,6 +709,7 @@ export default function WeddingInvitation() {
           <p
             style={{
               fontSize: 15,
+                background: "rgba(255, 255, 255, 0.82)",
               lineHeight: "190.1%",
                 color: 'black' ,
               marginTop: 4,
@@ -711,6 +720,7 @@ export default function WeddingInvitation() {
           <p
             style={{
               fontSize: 15,
+                background: "rgba(255, 255, 255, 0.82)",
               lineHeight: "110%",
                 color: 'black' ,
             }}
@@ -720,8 +730,9 @@ export default function WeddingInvitation() {
           <p
             style={{
               fontFamily: "'Cormorant', serif",
+                background: "rgba(255, 255, 255, 0.82)",
               fontSize: 15,
-              lineHeight: "60.1%",
+              lineHeight: "110%",
                 color: 'black' ,
             }}
           >
@@ -742,24 +753,7 @@ export default function WeddingInvitation() {
                 fontSize: 15,
                 letterSpacing: "-0.05em",
                 color: 'black' ,
-              }}
-            >
-              Daughter of
-            </p>
-            <p
-              style={{
-                fontSize: 15,
-                letterSpacing: "-0.05em",
-                color: 'black' ,
-              }}
-            >
-              Smt. Parvathi &amp; Shri K. Ramaswamy
-            </p>
-            <p
-              style={{
-                fontSize: 15,
-                letterSpacing: "-0.05em",
-                color: 'black' ,
+                background: "rgba(255, 255, 255, 0.82)",
                 marginTop: 12,
               }}
             >
