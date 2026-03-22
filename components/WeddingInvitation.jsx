@@ -45,7 +45,7 @@ const IMG = {
 };
 
 const AUDIO_SRC =
-  "https://framerusercontent.com/assets/q8x7MYVF61gOLfkcxdG7dlXjxw.mp3";
+  "../src/assets/TheriLoveBgm.mp3";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const EVENTS = [
