@@ -1,0 +1,28 @@
+{
+  "name": "Keerthana & Manoj Wedding 2026",
+  "short_name": "K♥M 2026",
+  "description": "Tamil Hindu Wedding Invitation — Keerthana .P & Manoj .A, 13 September 2026",
+  "theme_color": "#6B0F1A",
+  "background_color": "#0A0400",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "RSVP",
+      "url": "/#rsvp",
+      "description": "Confirm your attendance"
+    },
+    {
+      "name": "Venue",
+      "url": "/#location",
+      "description": "Get directions to the venue"
+    }
+  ],
+  "categories": ["lifestyle", "social"]
+}
