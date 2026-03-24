@@ -5,9 +5,13 @@ import receptionimg from "../src/assets/reception.png";
 import WeddingDateReveal from "./WeddingDateReveal";
 import data from "../public/manifest.json";
 import audio_bgm from "../src/assets/TheriLoveBgm.mp3";
+import templeImgbg from "../src/assets/templebg.avif";
+import temple3dImg from "../src/assets/temple3d.png";
 
 // ─── Image & Asset URLs (from original HTML) ─────────────────────────────────
 const IMG = {
+  temple3d : temple3dImg,
+  temple3dbg :templeImgbg,
   backgroundImg: templeImg,
   heroBg:
     "https://framerusercontent.com/images/CrkrJDdeoM65OHFWoOmjt0Jln9Y.png?width=393&height=852",
@@ -464,7 +468,7 @@ export default function WeddingInvitation() {
     <div
       style={{
         fontFamily: "'Gotu', sans-serif",
-        background: "#fff",
+        background: "#1b1a1a",
         maxWidth: 480,
         margin: "0 auto",
         position: "relative",
@@ -523,7 +527,7 @@ export default function WeddingInvitation() {
         </div>
 
         <img
-          src={IMG.backgroundImg}
+          src={IMG.temple3dbg}
           alt=""
           style={{
             position: "absolute",
@@ -551,7 +555,7 @@ export default function WeddingInvitation() {
         >
           {/* Full bleed background */}
           <img
-            src={IMG.heroBg}
+            src={IMG.temple3d}
             alt=""
             style={{
               position: "absolute",

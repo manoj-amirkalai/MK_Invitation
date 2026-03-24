@@ -5,6 +5,8 @@ import WeddingInvitation from '../components/WeddingInvitation';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <WeddingInvitation />
+    <div style={{background : 'black',margin: '0',padding :'0'}}>
+      <WeddingInvitation />
+    </div>
   </StrictMode>
 );
