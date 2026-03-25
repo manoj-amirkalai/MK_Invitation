@@ -76,7 +76,7 @@ function useCountdown(targetDateStr) {
   const templeInitialTop = HEADER_H * 0.5;
 
   return (
-    <div style={{ backgroundColor: "#fff", overflow: "hidden" }}>
+    <div style={{ backgroundColor: "#fff", overflow: "hidden" ,width: 480}}>
       {/* 1. MAIN WRAPPER */}   
    <div 
   style={{
