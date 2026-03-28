@@ -191,8 +191,8 @@ Tested and optimised for:
 
 - 📱 **Mobile** — iOS Safari, Android Chrome (320px+)
 - 📟 **Tablet** — iPad, Android tablets (768px+)
-- 💻 **Laptop** — 1024px–1440px
-- 🖥 **Desktop** — 1440px+
+- 💻 **Laptop** — 1024px–1480px
+- 🖥 **Desktop** — 1480px+
 
 ---
 

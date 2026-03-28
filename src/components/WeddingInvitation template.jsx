@@ -2,12 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import templeImg from "../src/assets/temple.jpg";
 import weddingimg from "../src/assets/wedding.png";
 import receptionimg from "../src/assets/reception.png";
-import WeddingDateReveal from "./WeddingDateReveal";
+import WeddingDateReveal from "./Countdown/WeddingDateReveal";
 import data from "../public/manifest.json";
 import audio_bgm from "../src/assets/TheriLoveBgm.mp3";
 import templeImgbg from "../src/assets/templebg.avif";
 import temple3dImg from "../src/assets/temple3d.png";
-import TempleHeader from "./HeaderPage/HeaderPage";
+import Temple from "./Temple/Temple";
 
 // ─── Image & Asset URLs (from original HTML) ─────────────────────────────────
 const IMG = {
@@ -501,7 +501,7 @@ export default function WeddingInvitation() {
         }}
       >
 
-     {/* <TempleHeader/> */}
+     {/* <Temple/> */}
       </section>
       {/* ── Fixed elements ── */}
       <MusicButton />
@@ -517,7 +517,8 @@ export default function WeddingInvitation() {
       <section
         style={{
           marginTop: 0,
-          background: "rgb(211, 210, 204)",
+          backgroundImage: `url(${"../src/assets/invitaionbg.avif"})`,
+          backgroundPosition: "center",
           padding: "60px 24px",
           textAlign: "center",
           display: "flex",

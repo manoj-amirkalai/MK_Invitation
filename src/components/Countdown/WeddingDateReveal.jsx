@@ -1,6 +1,7 @@
+
+import data from "../../manifest.json";
+import scratchImg from "../../assets/scratch.png";
 import ScratchCircle from "./ScratchReveal";
-import data from "../public/manifest.json";
-import scratchImg from "../src/assets/scratch.png";
 
 function WeddingDate() {
   const date = new Date(data.date);
