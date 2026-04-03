@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PILLAR_B64 from "../../assets/templebg.avif";
 import "./Header.css";
-import coconut from "../../assets/coconut.png";
-import leftFlower from "../../assets/coconut.png";
+import vinayagar from "../../assets/vinayagar.png";
+import leftFlower from "../../assets/left.webp";
 import rightFlower from "../../assets/coconut.png";
+import banana from "../../assets/banana.png";
+import ScrollReveal from "scrollreveal";
 
 const Header = () => {
+  useEffect(() => {
+   ScrollReveal({
+        origin: "left",
+        distance: "200px",
+        duration: 700,
+        reset: true,
+        opacity: 0,
+      }).reveal("#leftflower", { delay: 750 });
+
+      ScrollReveal({
+        origin: "left",
+        distance: "200px",
+        duration: 700,
+        reset: true,
+        opacity: 0,
+      }).reveal("#rightflower", { delay: 750 });
+
+      ScrollReveal({
+        origin: "bottom",
+        distance: "200px",
+        duration: 700,
+        reset: true,
+        opacity: 0,
+      }).reveal("#vinayagar", { delay: 500 });
+  }, []);
+  
   return (
     <div
       style={{
@@ -20,9 +48,10 @@ const Header = () => {
         padding: "20px", // Space around the coconut
       }}
     >
-       <img
-        src={coconut} // Your coconut image path
-        alt="coconut"
+       {/* <img
+        src={leftFlower} // Your coconut image path
+        alt="leftFlower"
+        id="leftflower"
         style={{
           position: "absolute",
           top: 0,
@@ -31,10 +60,11 @@ const Header = () => {
           display: "block",
           margin: "0 auto", // Center the coconut
         }}
-      /> 
-       <img
-        src={coconut} // Your coconut image path
-        alt="coconut"
+      />  */}
+       {/* <img
+        src={leftFlower} // Your coconut image path
+        alt="rightFlower"
+        id="rightflower"
         style={{
           position: "absolute",
           top: 0,
@@ -43,16 +73,18 @@ const Header = () => {
           display: "block",
           margin: "0 auto", // Center the coconut
         }}
-      /> 
+      />  */}
        <img
-        src={coconut} // Your coconut image path
-        alt="coconut"
+        src={vinayagar} // Your coconut image path
+        alt="vinayagar"
+        id="vinayagar"
         style={{
           position: "absolute",
-          top: 400,
-          left: 250,
+          top: 150,
+          left: 242,
           transform: "translate(-50%, -50%)", // Center the coconut
-          width: '100px', // Coconut size relative to the div
+          height: '250px', // Coconut size relative to the div
+          width: '250px', // Coconut size relative to the div
           display: "block",
           margin: "0 auto", // Center the coconut
         }}
