@@ -1,0 +1,25 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}
+
+.text-type__content {
+  /* Classic Serif Stack */
+  font-family: 'Times New Roman', Times, serif;
+  /* Styling refinements */
+  font-weight: 400;
+  font-style: italic;       /* Often looks more 'stylist' for names */
+  letter-spacing: 1px;      /* Adds a breath of air between letters */
+  line-height: 1.2;         /* Tightens the vertical space for titles */
+  -webkit-font-smoothing: antialiased; /* Makes fonts look crisper on Mac/iOS */
+}

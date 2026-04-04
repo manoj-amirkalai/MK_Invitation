@@ -73,6 +73,7 @@ export default function Temple() {
             zIndex: 5,
           }}>
             <img 
+              id="temple"
               src={TEMPLE_B64} 
               alt="temple" 
               style={{ width: "100%", display: "block" }} 
