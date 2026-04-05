@@ -99,7 +99,7 @@ const Countdown = () => {
             fontVariantNumeric: "tabular-nums",
           }}
         >
-          :
+          
         </span>
         <CountdownUnit value={countdown.h} label="Hours" />
         <span
@@ -110,7 +110,7 @@ const Countdown = () => {
             fontVariantNumeric: "tabular-nums",
           }}
         >
-          :
+          
         </span>
         <CountdownUnit value={countdown.m} label="Mins" />
         <span
@@ -122,7 +122,7 @@ const Countdown = () => {
             fontVariantNumeric: "tabular-nums",
           }}
         >
-          :
+          
         </span>
         <CountdownUnit value={countdown.s} label="Secs" />
       </div>
