@@ -1,0 +1,91 @@
+/* SKY BACKGROUND */
+.sky {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  /* gradient sky */
+  background: linear-gradient(#4ec0ff, #8ed6ff);
+}
+
+/* BASE CLOUD */
+.cloud {
+  position: absolute;
+  width: 200px;
+  height: 60px;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.9;
+}
+
+/* Cloud shape */
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 100px;
+  height: 100px;
+  top: -40px;
+  left: 30px;
+}
+
+.cloud::after {
+  width: 80px;
+  height: 80px;
+  top: -25px;
+  right: 30px;
+}
+
+/* PARALLAX CLOUDS */
+
+.cloud1 {
+  top: 80px;
+  transform: scale(0.5);
+  animation: moveCloud 15s linear infinite;
+}
+
+.cloud2 {
+  top: 200px;
+  transform: scale(0.8);
+  animation: moveCloud 15s linear infinite;
+}
+
+.cloud3 {
+  top: 280px;
+  animation: moveCloud 25s linear infinite;
+}
+
+.cloud4 {
+  top: 350px;
+  transform: scale(0.8);
+  animation: moveCloud 10s linear infinite;
+}
+.cloud5{
+  top: 500px;
+  transform: scale(0.6);
+  animation: moveCloud 10s linear infinite;
+}
+
+.cloud6 {
+  top: 600px;
+  transform: scale(1.5);
+  animation: moveCloud 20s linear infinite;
+}
+
+
+/* CLOUD MOVEMENT */
+
+@keyframes moveCloud {
+  0% {
+    left: -250px;
+  }
+  100% {
+    left: 110%;
+  }
+}

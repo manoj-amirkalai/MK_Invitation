@@ -10,9 +10,8 @@ import TextType from "../css/WordType/TextType";
 import ScrollRevealcode from "../ScrollRevealcode";
 
 const glassBase = {
-  backdropFilter: "blur(20px) saturate(180%)",
-  WebkitBackdropFilter: "blur(20px) saturate(180%)",
-  background: "rgba(255, 255, 255, 0.18)",
+  backdropFilter: "blur(1px) saturate(180%)",
+  WebkitBackdropFilter: "blur(1px) saturate(180%)",
   border: "1px solid rgba(255, 255, 255, 0.45)",
   boxShadow:
     "0 8px 32px rgba(128, 0, 0, 0.10), 0 1.5px 8px rgba(255,255,255,0.18) inset",
@@ -36,6 +35,12 @@ const Header = () => {
         overflow: "hidden",
       }}
     >
+      <div className="cloud cloud1"></div>
+      <div className="cloud cloud2"></div>
+      <div className="cloud cloud3"></div>
+      <div className="cloud cloud4"></div>
+       <div className="cloud cloud5"></div>
+      <div className="cloud cloud6"></div>
       <ScrollRevealcode />
       <img
         src={leftFlower} // Your coconut image path
@@ -81,6 +86,26 @@ const Header = () => {
           margin: "0 auto", // Center the coconut
         }}
       /> */}
+      
+
+      {/* Vinayagar image */}
+      <img
+        src={vinayagar}
+        alt="vinayagar"
+        id="vinayagar"
+        style={{
+          position: "absolute",
+          top: 80,
+          left: 242,
+          transform: "translate(-50%, -50%)",
+          height: "150px",
+          width: "150px",
+          display: "block",
+          margin: "0 auto",
+        }}
+      />
+
+      
 
       {/* OM Symbol — transparent glass pill */}
       <div
@@ -93,7 +118,6 @@ const Header = () => {
           transform: "translateX(-50%)",
           padding: "6px 6px 0 6px",
           zIndex: 10,
-          background: "rgba(255,255,255,0.12)",
           borderRadius: "50px",
           boxShadow:
             "0 4px 24px rgba(128,0,0,0.08), 0 1px 6px rgba(255,255,255,0.25) inset",
@@ -155,7 +179,6 @@ const Header = () => {
           padding: "12px 24px",
           zIndex: 10,
           whiteSpace: "nowrap",
-          background: "rgba(255, 245, 235, 0.22)",
           borderRadius: "16px",
           width: "80%",
           boxShadow:
@@ -220,23 +243,6 @@ const Header = () => {
         ))}
       </div>
 
-      {/* Vinayagar image */}
-      <img
-        src={vinayagar}
-        alt="vinayagar"
-        id="vinayagar"
-        style={{
-          position: "absolute",
-          top: 80,
-          left: 242,
-          transform: "translate(-50%, -50%)",
-          height: "150px",
-          width: "150px",
-          display: "block",
-          margin: "0 auto",
-        }}
-      />
-
       {/* Names + Weds section — glass card */}
       <div
         id="wedname"
@@ -250,7 +256,6 @@ const Header = () => {
           justifyContent: "center",
           alignItems: "center",
           gap: "0.75rem",
-          background: "rgba(255, 255, 255, 0.22)",
           borderRadius: "10px",
         }}
       >
