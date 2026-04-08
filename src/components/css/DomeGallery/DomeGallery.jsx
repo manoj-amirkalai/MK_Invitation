@@ -24,10 +24,10 @@ const getOptimizedUrl = (url) => {
 };
 
 const DEFAULT_IMAGES = [
-  {
-    src: image1,
-    alt: "couple",
-  },
+  // {
+  //   src: image1,
+  //   alt: "couple",
+  // },
   {
     src: image2,
     alt: "couple",
@@ -80,10 +80,10 @@ const DEFAULT_IMAGES = [
     src: image14,
     alt: "couple",
   },
-  {
-    src: image15,
-    alt: "couple",
-  },
+  // {
+  //   src: image15,
+  //   alt: "couple",
+  // },
 ];
 
 const DEFAULTS = {
