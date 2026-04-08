@@ -46,22 +46,28 @@
         max-width: 1000px;
     }
 
-    .glassCard {
-        /* The Glassmorphism Effect */
-        background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-        backdrop-filter: blur(1px);           /* The blur effect */
-        -webkit-backdrop-filter: blur(10px);    /* For Safari support */
-        
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        padding: 30px;
-        width: 350px;
-        text-align: center;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.986);
-        font-weight: 700;
-        margin-top: -80px;
-        transform: scale(0.7);
+    .glassCard {/* The Glassmorphism Effect */
+background-image: url('../../assets/invitecardBg.png');
+background-position: -150px -100px;
+background-repeat: no-repeat;
+background-size: 185%; /* Ensures the image fills the container */
+
+/* Add a semi-transparent background color to create the 'glass' tint */
+background-color: rgba(255, 255, 255, 0.1); 
+
+backdrop-filter: blur(10px); /* Increased from 1px for a true glass look */
+-webkit-backdrop-filter: blur(10px);
+
+border: 1px solid rgba(255, 255, 255, 0.2);
+border-radius: 20px;
+padding: 30px;
+width: 350px;
+text-align: center;
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.986);
+font-weight: 700;
+margin-top: -80px;
+transform: scale(0.7);
     }
 
     .glassCard h3 {
