@@ -15,7 +15,7 @@ function App() {
   const [loadProgress, setLoadProgress] = useState(0); // Track real percentage
 
   useEffect(() => {
-    const imageElements = Array.from(document.querySelectorAll("img:not(#gallery)"));
+    const imageElements = Array.from(document.querySelectorAll("img"));
     const backgroundUrls = new Set();
 
     const backgroundCandidates = Array.from(document.querySelectorAll("*"));
@@ -110,7 +110,7 @@ function App() {
     <StrictMode>
       <Loader isLoading={isLoading} realProgress={loadProgress} />
       <div style={contentStyle}>
-        <Header />
+        <Header isLoading={isLoading} />
         <Temple />
         <Countdown />
         <div style={{ width: 480, height: "50vh" }}>

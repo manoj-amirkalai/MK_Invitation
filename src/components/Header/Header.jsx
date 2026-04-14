@@ -15,7 +15,7 @@ const glassBase = {
   borderRadius: "20px",
 };
 
-const Header = () => {
+const Header = ({ isLoading }) => {
   return (
     <div
       style={{
@@ -38,7 +38,7 @@ const Header = () => {
       <div className="cloud cloud4"></div>
        <div className="cloud cloud5"></div>
       <div className="cloud cloud6"></div> */}
-      <ScrollRevealcode />
+      {!isLoading && <ScrollRevealcode />}
       <img
         src={leftFlower} // Your coconut image path
         alt="leftFlower"

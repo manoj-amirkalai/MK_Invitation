@@ -745,7 +745,7 @@ export default function DomeGallery({
                   onClick={onTileClick}
                   onPointerUp={onTilePointerUp}
                 >
-                  <img src={it.src} draggable={false} alt={it.alt} id="gallery" loading="lazy" decoding="async" style={{
+                  <img src={it.src} draggable={false} alt={it.alt} id="gallery" loading="eager" decoding="async" style={{
                     width: '100%',      // Fill the container width
                     height: '100%',     // Fill the container height
                     objectFit: 'cover', // Ensures the image fills the area without stretching
