@@ -15,39 +15,77 @@ function App() {
   const [loadProgress, setLoadProgress] = useState(0); // Track real percentage
 
   useEffect(() => {
-    const images = Array.from(document.querySelectorAll("img"));
-    const totalImages = images.length;
+    const imageElements = Array.from(document.querySelectorAll("img"));
+    const backgroundUrls = new Set();
 
-    if (totalImages === 0) {
+    const backgroundCandidates = Array.from(document.querySelectorAll("*"));
+    backgroundCandidates.forEach((el) => {
+      const bg = getComputedStyle(el).backgroundImage;
+      if (!bg || bg === "none") return;
+
+      const matches = [...bg.matchAll(/url\((['"]?)(.*?)\1\)/g)];
+      matches.forEach((match) => {
+        const url = match[2];
+        if (!url || url.startsWith("data:")) return;
+        try {
+          backgroundUrls.add(new URL(url, globalThis.location.href).href);
+        } catch {
+          backgroundUrls.add(url);
+        }
+      });
+    });
+
+    const uniqueUrls = new Set(
+      imageElements
+        .map((img) => img.src)
+        .filter(Boolean)
+        .concat([...backgroundUrls]),
+    );
+
+    const sources = [...uniqueUrls].filter(Boolean);
+    if (sources.length === 0) {
       setLoadProgress(100);
       setIsLoading(false);
       return;
     }
 
-    let imagesLoaded = 0;
+    let loadedCount = 0;
+    const totalSources = sources.length;
     const updateProgress = () => {
-      imagesLoaded = Math.min(imagesLoaded + 1, totalImages);
-      const percent = Math.floor((imagesLoaded / totalImages) * 100);
+      loadedCount = Math.min(loadedCount + 1, totalSources);
+      const percent = Math.floor((loadedCount / totalSources) * 100);
       setLoadProgress(percent);
-      if (imagesLoaded === totalImages) {
+      if (loadedCount === totalSources) {
         setLoadProgress(100);
-        setTimeout(() => setIsLoading(false), 500); // Slight delay for smooth exit
+        setTimeout(() => setIsLoading(false), 500);
       }
     };
 
-    images.forEach((img) => {
-      if (img.complete) {
+    const timeoutId = globalThis.setTimeout(() => {
+      setLoadProgress(100);
+      setIsLoading(false);
+    }, 15000);
+
+    const createdImages = sources.map((src) => {
+      const image = new Image();
+      image.src = src;
+
+      if (image.complete) {
         updateProgress();
-      } else {
-        img.addEventListener("load", updateProgress);
-        img.addEventListener("error", updateProgress);
+        return null;
       }
+
+      image.addEventListener("load", updateProgress, { once: true });
+      image.addEventListener("error", updateProgress, { once: true });
+      return image;
     });
 
     return () => {
-      images.forEach((img) => {
-        img.removeEventListener("load", updateProgress);
-        img.removeEventListener("error", updateProgress);
+      globalThis.clearTimeout(timeoutId);
+      createdImages.forEach((image) => {
+        if (!image) return;
+        image.removeEventListener("load", updateProgress);
+        image.removeEventListener("error", updateProgress);
       });
     };
   }, []);
