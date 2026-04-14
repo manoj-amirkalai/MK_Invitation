@@ -1,6 +1,7 @@
 // src/components/Loader/Loader.jsx
 import "./Loader.css";
-import logo from "../../assets/loader.png";
+import loader from "../../assets/loader.png";
+import logo from "../../assets/logo.png";
 
 export default function Loader({ isLoading, realProgress = 0 }) {
   return (
@@ -17,8 +18,9 @@ export default function Loader({ isLoading, realProgress = 0 }) {
       </div>
       
       <div className="loader-content">
+          <div style={{position:'absolute', top :110,left :115}}><img src={logo} alt="logo" width={250} height={250}  /></div>
         
-          <img src={logo} alt="logo" width={450} height={450} className="logo" />
+          <img src={loader} alt="loader" width={450} height={450} className="logo" />
 
         <div className="celebration-row">
           <div className="instrument drum">🥁</div>
