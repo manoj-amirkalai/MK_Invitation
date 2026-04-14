@@ -1,5 +1,6 @@
 // src/components/Loader/Loader.jsx
 import "./Loader.css";
+import logo from "../../assets/loader.png";
 
 export default function Loader({ isLoading, realProgress = 0 }) {
   return (
@@ -16,11 +17,8 @@ export default function Loader({ isLoading, realProgress = 0 }) {
       </div>
       
       <div className="loader-content">
-        <h1 className="couple-name">Manoj </h1>
         
-        <h1 className="couple-name"> & </h1>
-        
-        <h1 className="couple-name">Keerthana</h1>
+          <img src={logo} alt="logo" width={450} height={450} className="logo" />
 
         <div className="celebration-row">
           <div className="instrument drum">🥁</div>

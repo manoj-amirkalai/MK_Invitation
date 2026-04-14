@@ -148,6 +148,17 @@
 }
 
 /* Optional: Smooth entry for the content */
+
+/* Rotating Logo */
+.logo {
+  animation: rotateInfinite 10s linear infinite;
+  margin-bottom: 25px;
+}
+
+@keyframes rotateInfinite {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 .loader-content {
   animation: contentFadeIn 1s ease-out;
 }
