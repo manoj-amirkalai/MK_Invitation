@@ -1,7 +1,7 @@
 // src/components/Loader/Loader.jsx
 import "./Loader.css";
 
-export default function Loader({ isLoading , realProgress }) {
+export default function Loader({ isLoading, realProgress = 0 }) {
   return (
     <div className={`loader-container ${!isLoading ? "hidden" : ""}`}>
       {/* Falling Flowers Background */}
@@ -9,12 +9,8 @@ export default function Loader({ isLoading , realProgress }) {
         {Array.from({ length: 200 }).map((_, i) => (
           <div key={i}>
             {" "}
-            <span  className="falling-flower">
-              🥳
-            </span>
-            <span  className="falling-flower">
-              🎉
-            </span>
+            <span className="falling-flower">🥳</span>
+            <span className="falling-flower">🎉</span>
           </div>
         ))}
       </div>
@@ -36,10 +32,10 @@ export default function Loader({ isLoading , realProgress }) {
           <div className="progress-bar-container">
             <div 
               className="progress-bar-fill" 
-              style={{ width: `${realProgress}%` }} // Use the prop here
+              style={{ width: `${realProgress}%` }}
             ></div>
           </div>
-          <p className="percentage-text">{realProgress}%</p> 
+          <p className="percentage-text">{realProgress}%</p>
         </div>
 
         <div className="text-group">
