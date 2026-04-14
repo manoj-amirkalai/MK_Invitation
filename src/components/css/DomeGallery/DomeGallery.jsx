@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useCallback } from "react";
 import { useGesture } from "@use-gesture/react";
 import "./DomeGallery.css";
-import image1 from '../../../assets/gallery/image (1).jpeg';
 import image2 from '../../../assets/gallery/image (2).png';
 import image3 from '../../../assets/gallery/image (3).png';
 import image4 from '../../../assets/gallery/image (4).png';
@@ -15,7 +14,6 @@ import image11 from '../../../assets/gallery/image (11).png';
 import image12 from '../../../assets/gallery/image (12).png';
 import image13 from '../../../assets/gallery/image (13).png';
 import image14 from '../../../assets/gallery/image (14).jpg';
-import image15 from '../../../assets/gallery/image (15).jpeg';
 
 // Function to convert single URL
 const getOptimizedUrl = (url) => {
