@@ -18,7 +18,7 @@ export default function Loader({ isLoading, realProgress = 0 }) {
       </div>
       
       <div className="loader-content">
-          <div style={{position:'absolute', top :110,left :115}}><img src={logo} alt="logo" width={250} height={250}  /></div>
+          <div style={{position:'absolute',backdropFilter : 'blur(5px)', top :110,left :115}}><img src={logo} alt="logo" width={250} height={250}  /></div>
         
           <img src={loader} alt="loader" width={450} height={450} className="logo" />
 
