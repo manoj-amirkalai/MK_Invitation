@@ -15,21 +15,22 @@ function App() {
   const [loadProgress, setLoadProgress] = useState(0); // Track real percentage
 
   useEffect(() => {
-      const images = document.querySelectorAll("img");
+    const images = Array.from(document.querySelectorAll("img"));
     const totalImages = images.length;
-      
+
     if (totalImages === 0) {
       setLoadProgress(100);
       setIsLoading(false);
       return;
-      }
+    }
 
-      let imagesLoaded = 0;
+    let imagesLoaded = 0;
     const updateProgress = () => {
-          imagesLoaded++;
+      imagesLoaded = Math.min(imagesLoaded + 1, totalImages);
       const percent = Math.floor((imagesLoaded / totalImages) * 100);
       setLoadProgress(percent);
       if (imagesLoaded === totalImages) {
+        setLoadProgress(100);
         setTimeout(() => setIsLoading(false), 500); // Slight delay for smooth exit
       }
     };
@@ -37,14 +38,21 @@ function App() {
     images.forEach((img) => {
       if (img.complete) {
         updateProgress();
-    } else {
+      } else {
         img.addEventListener("load", updateProgress);
         img.addEventListener("error", updateProgress);
-    }
+      }
     });
+
+    return () => {
+      images.forEach((img) => {
+        img.removeEventListener("load", updateProgress);
+        img.removeEventListener("error", updateProgress);
+      });
+    };
   }, []);
 
-  const style = {
+  const contentStyle = {
     width: 480,
     display: "flex",
     flexDirection: "column",
@@ -53,12 +61,17 @@ function App() {
     background: "black",
     margin: "0 !important",
     padding: "0 !important",
+    opacity: isLoading ? 0 : 1,
+    pointerEvents: isLoading ? "none" : "auto",
+    transition: "opacity 0.4s ease-in-out",
+    position: "relative",
+    zIndex: isLoading ? -1 : 0,
   };
 
   return (
     <StrictMode>
-     {isLoading ? <Loader isLoading={isLoading} /> :
-      <div style={style}>
+      <Loader isLoading={isLoading} realProgress={loadProgress} />
+      <div style={contentStyle}>
         <Header />
         <Temple />
         <Countdown />
@@ -74,7 +87,7 @@ function App() {
         </div>
         <LocationDetails />
         <WeddingFooter />
-      </div>}
+      </div>
     </StrictMode>
   );
 }
