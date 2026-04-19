@@ -70,10 +70,15 @@ const ScratchCircle = ({ size = 150, coverImage, label }) => {
         alignItems: "center",
         justifyContent: "center",
         fontSize: "22px",
-        fontWeight: "bold", background: "rgba(255, 255, 255, 0.1)",
-        backdropFilter: "blur(1px)", // Increased for better "glass" look
-        WebkitBackdropFilter: "blur(1px)",
-        border: "1px solid rgba(92,94,8,0.3)",
+        fontWeight: "bold",
+        // Background Properties
+        backgroundImage: 'url("/assets/png/stagelogo.png")',
+        backgroundSize: "contain",      // Ensures the whole logo is visible
+        backgroundPosition: "center",   // Centers the logo
+        backgroundRepeat: "no-repeat",  // Prevents the logo from tiling
+        // Styling
+        backdropFilter: "blur(5px)",
+        WebkitBackdropFilter: "blur(5px)",
         color: "white",
         textShadow: "1px 1px 3px rgb(10, 10, 10)",
       }}
